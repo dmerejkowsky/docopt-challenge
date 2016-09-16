@@ -2,10 +2,7 @@ import argparse
 import collections
 import sys
 
-class Position():
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+import naval_fate
 
 
 class PosAction(argparse.Action):
@@ -15,7 +12,7 @@ class PosAction(argparse.Action):
         # initialize namespace.pos if not already, and set
         # the correct Position attribute:
         if not hasattr(namespace, "pos"):
-            namespace.pos = Position()
+            namespace.pos = naval_fate.Position()
         setattr(namespace.pos, self.dest, values)
 
 
@@ -70,4 +67,8 @@ def parse_args(argv):
 
 
 if __name__ == "__main__":
-    parse_args(sys.argv[1:])
+    args = parse_args(sys.argv[1:])
+    if args.cmd == "move_ship":
+        naval_fate.move_ship(args.name, args.pos, args.speed)
+    else:
+        sys.exit("Not implemented: " + args.cmd)

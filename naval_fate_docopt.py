@@ -20,10 +20,34 @@ Options:
 import sys
 import docopt
 
+import naval_fate
+
 
 def parse_args(argv):
     return docopt.docopt(__doc__, argv=argv)
 
 
+def to_float(opt_str):
+    try:
+        return float(opt_str.replace("\\", ""))
+    except ValueError:
+        return 0
+
+
+def main():
+    opts = parse_args(sys.argv[1:])
+    x = to_float(opts["<x>"])
+    y = to_float(opts["<y>"])
+    position = naval_fate.Position(x, y)
+    speed = to_float(opts["--speed"])
+
+    if opts["ship"] and opts["move"]:
+        (name,) = opts["<name>"]
+        naval_fate.move_ship(name, position, speed)
+    else:
+        # ???
+        sys.exit(2)
+
+
 if __name__ == "__main__":
-    parse_args(sys.argv[1:])
+    main()
