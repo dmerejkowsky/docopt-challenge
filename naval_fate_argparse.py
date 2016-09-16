@@ -27,7 +27,7 @@ def configure_position_parser(parser):
 def configure_ship_parser(parser):
     ship_commands = parser.add_subparsers(title="ship commands")
     new_ship = ship_commands.add_parser("new")
-    new_ship.add_argument("name")
+    new_ship.add_argument("names", nargs="+")
     new_ship.set_defaults(cmd="new_ship")
 
     shoot = ship_commands.add_parser("shoot")

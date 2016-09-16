@@ -15,7 +15,7 @@ def test_help():
 def test_new_ship():
     args = parse("ship new bounty")
     assert args.cmd == "new_ship"
-    assert args.name == "bounty"
+    assert args.names == ["bounty"]
 
 
 def test_move_ship():
