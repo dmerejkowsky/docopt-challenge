@@ -1,7 +1,7 @@
 # My solution to the docopt challenge
 
-OK, it's 50 lines of Python, but here are 3 reasons
-I think `argparse` is better
+OK, it's ~50 lines of Python, but here are a few reason I think `argparse` is
+still a better choice
 
 ## Better return value
 
@@ -37,6 +37,9 @@ if opts["ship"]:
     if opts["move"]:
         move_ship(name, position, speed)
 ```
+
+So in the end you have ~20 lines of code before you can use the
+return value of `docopt` ...
 
 ## Consistency and coupling
 
@@ -83,7 +86,7 @@ commands:
   {ship,mine}
 ```
 
-``console
+```console
 $ naval_fate ship new -h
 Usage: naval_fate_argparse.py ship new [-h] names [names ...]
 
@@ -105,6 +108,7 @@ Here are a few changes that are much easier to do in the `argparse` version:
 
 * Use a 3D position
 
-* Add even adding new actions! Just make sure to use `parser.set_defaults(cmd=...)` and you're
-  all set. In the `docopt` version, you'll have to carefully patch some code in
-  the middle of several `if` statement ...
+* Add even adding new actions! Just make sure to use
+  `parser.set_defaults(cmd=...)` and you're all set. In the `docopt` version,
+  you'll have to carefully patch some code in the middle of several `if`
+  statement ...
