@@ -1,9 +1,9 @@
-import naval_fate
+import naval_fate_argparse
 
 import pytest
 
 def parse(cmd):
-    return naval_fate.parse_args(cmd.split())
+    return naval_fate_argparse.parse_args(cmd.split())
 
 
 def test_help():
