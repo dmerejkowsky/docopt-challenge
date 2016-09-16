@@ -38,8 +38,6 @@ if opts["ship"]:
         move_ship(name, position, speed)
 ```
 
-So in the end you have ~20 lines of code before you can use the
-return value of `docopt` ...
 
 ## Consistency and coupling
 
@@ -52,7 +50,8 @@ names, whereas with `docopt` you end up using `opt["foo"]`, `opt["--foo"]` or
 `opt["<foo>"]` depending on whether it's a command, an option or an argument.
 
 Also note how we have to add a custom conversion function to get real values
-from the `<x>` and `<y>` arguments.
+from the `<x>` and `<y>` arguments: so in the end you have ~20 lines of code
+instead of just one ...
 
 ## Error messages
 
@@ -70,7 +69,7 @@ $ naval_fate ship move bounty 5 fortytwo
 argument y: invalid float value: 'fortytwo'
 ```
 
-## Help message
+## Help messages
 
 Of course, you can pass the whole docstring from the `docopt` version to the
 `ArgumentParser` constructor, but look what happens if you don't:
@@ -108,7 +107,7 @@ Here are a few changes that are much easier to do in the `argparse` version:
 
 * Use a 3D position
 
-* Add even adding new actions! Just make sure to use
+* And even adding new actions! Just make sure to use
   `parser.set_defaults(cmd=...)` and you're all set. In the `docopt` version,
   you'll have to carefully patch some code in the middle of several `if`
-  statement ...
+  statements ...
