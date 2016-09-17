@@ -1,7 +1,19 @@
 # My solution to the docopt challenge
 
-OK, it's ~50 lines of Python, but here are a few reason I think `argparse` is
-still a better choice
+## Context
+
+The [challenge](http://challenge.docopt.org/) is to write a command line parser
+for a complex command line API.
+
+The [docopt](http://docopt.org) authors say they can do it with just 2 lines
+of code.
+
+Well, I took the challenge using nothing but `Python 3.5` and the
+[argparse module](https://docs.python.org/3/howto/argparse.html) from the standard
+library.
+
+My solution is ~50 lines, but here are a few reason I think `argparse` is
+still a better choice.
 
 ## Better return value
 
