@@ -5,6 +5,27 @@
 The [challenge](http://challenge.docopt.org/) is to write a command line parser
 for a complex command line API.
 
+The API looks like this:
+
+```text
+Naval Fate.
+
+Usage:
+  naval_fate ship new <name>...
+  naval_fate ship <name> move <x> <y> [--speed=<kn>]
+  naval_fate ship shoot <x> <y>
+  naval_fate mine (set|remove) <x> <y> [--moored|--drifting]
+  naval_fate -h | --help
+  naval_fate --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+  --speed=<kn>  Speed in knots [default: 10].
+  --moored      Moored (anchored) mine.
+  --drifting    Drifting mine.
+```
+
 The [docopt](http://docopt.org) authors say they can do it with just 2 lines
 of code.
 
@@ -12,8 +33,8 @@ Well, I took the challenge using nothing but `Python 3.5` and the
 [argparse module](https://docs.python.org/3/howto/argparse.html) from the standard
 library.
 
-My solution is ~50 lines, but here are a few reason I think `argparse` is
-still a better choice.
+My [solution](https://github.com/dmerejkowsky/docopt-challenge/blob/master/naval_fate_argparse.py)
+is ~50 lines, but here are a few reason I think `argparse` is still a better choice.
 
 ## Better return value
 
