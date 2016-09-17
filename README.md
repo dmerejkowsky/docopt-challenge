@@ -84,7 +84,7 @@ names, whereas with `docopt` you end up using `opt["foo"]`, `opt["--foo"]` or
 
 Also note how we have to add a custom conversion function to get real values
 from the `<x>` and `<y>` arguments: so in the end you have ~20 lines of code
-instead of just one ...
+instead of just two ...
 
 ## Error messages
 
