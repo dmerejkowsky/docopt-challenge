@@ -102,6 +102,8 @@ $ naval_fate ship move bounty 5 fortytwo
 argument y: invalid float value: 'fortytwo'
 ```
 
+There's a [Pull Request](https://github.com/docopt/docopt/pull/63) to fix this, though.
+
 ## Help messages
 
 Of course, you can pass the whole docstring from the `docopt` version to the
