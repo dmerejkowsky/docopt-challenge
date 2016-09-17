@@ -33,8 +33,10 @@ Well, I took the challenge using nothing but `Python 3.5` and the
 [argparse module](https://docs.python.org/3/howto/argparse.html) from the standard
 library.
 
-My [solution](https://github.com/dmerejkowsky/docopt-challenge/blob/master/naval_fate_argparse.py)
-is ~50 lines, but here are a few reason I think `argparse` is still a better choice.
+My [solution](
+https://github.com/dmerejkowsky/docopt-challenge/blob/master/naval_fate_argparse.py)
+is ~50 lines, but here are a few reasons I think `argparse` is still a better
+choice.
 
 ## Better return value
 
