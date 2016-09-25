@@ -148,3 +148,9 @@ Here are a few changes that are much easier to do in the `argparse` version:
   `parser.set_defaults(cmd=...)` and you're all set. In the `docopt` version,
   you'll have to carefully patch some code in the middle of several `if`
   statements ...
+
+# Going further
+
+I've also written a [blog post](
+https://dmerej.info/blog/post/docopt-v-argparse/) about this topic if you want
+to know more about `argparse` vs `docopt` ...
